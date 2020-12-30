@@ -2,7 +2,7 @@
 cask_args appdir: "/Applications"
 
 # Taps
-tap "caskroom/cask"
+tap "homebrew/cask"
 tap "homebrew/bundle"
 
 # System set up
@@ -25,10 +25,10 @@ brew "yarn"
 
 # Shell
 cask "iterm2"
-cask "fzf"
-cask "neovim"
-cask "tmux"
-cask "zsh"
+brew "fzf"
+brew "neovim"
+brew "tmux"
+brew "zsh"
 
 # Install applications
 cask "google-chrome"

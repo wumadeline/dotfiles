@@ -19,7 +19,7 @@ brew bundle
 # Install oh-my-zsh
 export ZSH="/Users/madelinewu/.oh-my-zsh"
 
-if [ ! -d $ZSH ]; thenaa
+if [ ! -d $ZSH ]; then
   echo "Installing oh-my-zsh"
   sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 fi

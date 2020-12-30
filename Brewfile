@@ -8,7 +8,7 @@ tap "homebrew/bundle"
 # System set up
 brew "colordiff"
 brew "coreutils"  # Those that come with macOS are outdated
-brew "curl", args: ["with-nghttp2"]
+brew "curl"
 brew "git"
 brew "grep"
 brew "mas"

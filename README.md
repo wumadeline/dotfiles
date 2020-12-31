@@ -81,7 +81,6 @@ iTerm2 > Preferences >  Profiles > Colors > Color Presets > Solarized Dark
 [Getting Started with Dotfiles](https://driesvints.com/blog/getting-started-with-dotfiles/) by Dries Vints
 
 [Getting Started with
-
 Dotfiles](https://medium.com/@webprolific/getting-started-with-dotfiles-43c3602fd789)
 by Lars Kappert
 

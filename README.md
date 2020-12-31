@@ -2,21 +2,44 @@
 These are my (WIP) dotfiles.
 
 ## Installation
-### Set Up
-Clone a copy of this directory onto your local machine.
-```
-git clone https://github.com/wumadeline/dotfiles.git
-cd dotfiles
-```
-
+### Set up instructions for brand new machine
 On a new machine, install the most recent software update and set up all
 necessary dependencies/applications.
 ```
 sudo softwareupdate -i -a
 xcode-select --install
-sh setup
+```
+
+#### Additional steps for ARM64 Macs
+Download Xcode from the MAS (Mac App Store). Otherwise, when running the `setup` script, `mas` and `neovim` will not be installed because it requires a full installation of Xcode via the MAS. 
+```
+mas: A full installation of Xcode.app 10.2 is required to compile
+this software. Installing just the Command Line Tools is not sufficient.
+
+Xcode can be installed from the App Store.
+Error: An unsatisfied requirement failed this build.
+Installing mas has failed!
+```
 
 ```
+Error: neovim: no bottle available!
+You can try to install from source with e.g.
+  brew install --build-from-source neovim
+Please note building from source is unsupported. You will encounter build
+failures with some formulae. If you experience any issues please create pull
+requests instead of asking for help on Homebrew's GitHub, Twitter or any other
+official channels.
+Installing neovim has failed!
+```
+### Set Up
+Clone a copy of this directory onto your local machine, then run the setup script.
+```
+git clone https://github.com/wumadeline/dotfiles.git
+cd dotfiles
+sh setup
+```
+
+Note: In order to download and install MAS apps, you'll need to be signed into your iCloud account. This action hasn't been added programmatically via the set up script, so you'll need to do this manually.
 
 ### Mac OS X Preferences
 Set default macOS system preferences:

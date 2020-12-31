@@ -27,6 +27,7 @@ brew "yarn"
 cask "iterm2"
 brew "fzf"
 brew "neovim"
+brew "thefuck"
 brew "tmux"
 brew "zsh"
 

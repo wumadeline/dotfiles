@@ -12,7 +12,13 @@ BAT_THEME='Solarized (dark)'
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-plugins=()
+plugins=(
+    autopep8
+    fzf
+    git
+    thefuck
+    zsh-autosuggestions
+)
 
 source $ZSH/oh-my-zsh.sh
 

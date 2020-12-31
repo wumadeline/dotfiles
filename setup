@@ -1,0 +1,89 @@
+#!/bin/zsh
+
+install_or_update_homebrew () {
+  # Check for Homebrew and install if we don't have it
+  if test ! $(which brew); then
+    echo "Installing Homebrew..."
+    sh -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+  else
+    # Update Homebrew recipes
+    brew update
+  fi
+}
+
+install_brewfile () {
+  # Install all our dependencies with bundle (See Brewfile)
+  brew tap homebrew/bundle
+  echo "› brew bundle"
+  brew bundle
+}
+
+install_oh_my_zsh () {
+  # Install oh-my-zsh
+  export ZSH="/Users/madelinewu/.oh-my-zsh"
+
+  if [ ! -d $ZSH ]; then
+    echo "Installing oh-my-zsh"
+    sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+  fi
+}
+
+install_oh_my_zsh_plugins () {
+  # Install zsh-autosuggestions
+  if [ ! -d ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions ]; then
+    echo "Installing zsh-autosuggestions..."
+    git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+  fi
+}
+
+setup_neovim () {
+  # Create init.vim
+  mkdir -p ~/.config/nvim/init.vim
+
+  # Install vim-plug
+  if [ ! -f ~/.local/share/nvim/site/autoload/plug.vim ]; then
+    sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
+       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+  fi
+}
+
+# Set up git
+prompt_for_git_config () {
+    option=$1
+    prompt="$2"
+
+    if [[ ! `git config --global $option` ]]; then
+        read -p "$prompt: " item
+        git config --global $option "$item"
+    fi
+}
+
+configure_git () {
+    if [ ! -f .gitconfig ]; then
+      echo "Configuring git..."
+      prompt_for_git_config user.name "Enter your name"
+      prompt_for_git_config user.email "Enter your email"
+      git config --global core.excludesfile "$HOME/.gitignore_global"
+    fi
+}
+
+main () {
+  echo "Setting up your Mac..."
+  install_or_update_homebrew
+  install_brewfile
+  install_oh_my_zsh
+  install_oh_my_zsh_plugins
+  setup_neovim
+  configure_git
+  echo "Completed Mac set up!"
+}
+
+if [[ "${BASH_SOURCE[0]}" = "$0" ]]; then
+    if [[ "debug" = $1 ]]; then
+        DEBUG=1
+    else
+        DEBUG=0
+    fi
+
+    main "$@"
+fi

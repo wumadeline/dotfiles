@@ -5,7 +5,7 @@ These are my (WIP) dotfiles.
 ### Set Up
 Clone a copy of this directory onto your local machine.
 ```
-git clone git@github.com:wumadeline/dotfiles.git
+git clone https://github.com/wumadeline/dotfiles.git
 cd dotfiles
 ```
 

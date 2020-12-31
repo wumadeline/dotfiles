@@ -49,7 +49,6 @@ main () {
     confirm "Running this installation will wipe all previous dotfiles."
     info "Linking dotfiles"; link_dotfiles
     success "Dotfiles installed!"
-    source ~/.zshrc
 }
 
 if [[ "${BASH_SOURCE[0]}" = "$0" ]]; then

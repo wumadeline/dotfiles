@@ -65,19 +65,26 @@ Change the iTerm2 colors via the Preferences:
 iTerm2 > Preferences >  Profiles > Colors > Color Presets > Solarized Dark
 ```
 
-## Credits
+## Resources
 ### Dotfiles Referenced
-[caarlos0](https://github.com/caarlos0/dotfiles)
+- [caarlos0](https://github.com/caarlos0/dotfiles)
+- [driesvints](https://github.com/driesvints/dotfiles)
+- [jcomo](https://github.com/jcomo/dotfiles)
+- [mathiasbynens](https://github.com/mathiasbynens/dotfiles)
+- [webpro](https://github.com/webpro/dotfiles)
 
-[driesvints](https://github.com/driesvints/dotfiles)
+### Vim Stuff
+[Vim and Python](https://realpython.com/vim-and-python-a-match-made-in-heaven/)
+from Real Python
 
-[jcomo](https://github.com/jcomo/dotfiles)
+Optixal's Neovimm init.vim [Github](https://github.com/Optixal/neovim-init.vim)
 
-[mathiasbynens](https://github.com/mathiasbynens/dotfiles)
+[Build your own Vim statusline](https://shapeshed.com/vim-statuslines/)
 
-[webpro](https://github.com/webpro/dotfiles)
+[Vim for Python in 2020](https://www.vimfromscratch.com/articles/vim-for-python/)
+ from Vim from Scratch
 
-### Useful Resources
+### Useful Things
 [Getting Started with Dotfiles](https://driesvints.com/blog/getting-started-with-dotfiles/) by Dries Vints
 
 [Getting Started with

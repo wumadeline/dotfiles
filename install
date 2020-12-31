@@ -45,10 +45,20 @@ link_dotfiles () {
     done
 }
 
+# Run all installers
+run_installers () {
+    git ls-tree --name-only -r HEAD | grep install.sh | while read -r installer; do
+        echo "› ${installer}..."
+	sh "$installer"
+    done
+}
+
 main () {
     confirm "Running this installation will wipe all previous dotfiles."
     info "Linking dotfiles"; link_dotfiles
     success "Dotfiles installed!"
+    info "Running installers"; run_installers
+    success "Custom preferences installed!"
 }
 
 if [[ "${BASH_SOURCE[0]}" = "$0" ]]; then

@@ -1,3 +1,5 @@
+ZSH_DISABLE_COMPFIX="true"
+
 DOTFILES="$HOME/dotfiles"
 
 # Path to your oh-my-zsh installation.
@@ -16,6 +18,7 @@ plugins=(
     autopep8
     fzf
     git
+    sublime
     thefuck
     zsh-autosuggestions
 )
@@ -28,6 +31,10 @@ if [[ -n $SSH_CONNECTION ]]; then
 else
   export EDITOR='nvim'
 fi
+
+# Custom aliases
+alias nv="nvim"
+
 
 # Load default dotfiles
 for DOTFILE in $DOTFILES; do

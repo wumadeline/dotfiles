@@ -68,21 +68,30 @@ iTerm2 > Preferences >  Profiles > Colors > Color Presets > Solarized Dark
 ## Credits
 ### Dotfiles Referenced
 [caarlos0](https://github.com/caarlos0/dotfiles)
+
 [driesvints](https://github.com/driesvints/dotfiles)
+
 [jcomo](https://github.com/jcomo/dotfiles)
+
 [mathiasbynens](https://github.com/mathiasbynens/dotfiles)
+
 [webpro](https://github.com/webpro/dotfiles)
 
 ### Useful Resources
 [Getting Started with Dotfiles](https://driesvints.com/blog/getting-started-with-dotfiles/) by Dries Vints
+
 [Getting Started with
+
 Dotfiles](https://medium.com/@webprolific/getting-started-with-dotfiles-43c3602fd789)
 by Lars Kappert
+
 [Setting Up a Mac Dev Machine From Zero to Hero with Dotfiles](https://github.com/herrbischoff/awesome-macos-command-line)
+
 A repo
 ([awesome-macos-command-line](https://github.com/herrbischoff/awesome-macos-command-line))
 detailing shells commands to customize macOS
 [Setting up Neovim for Web Development in 2020](https://medium.com/better-programming/setting-up-neovim-for-web-development-in-2020-d800de3efacd) by Dominik Tarnowski
+
 [A Complete Guide to Neovim Configuration for Python Development on
 Linux](https://jdhao.github.io/2018/12/24/centos_nvim_install_use_guide_en/) by
 jdhao

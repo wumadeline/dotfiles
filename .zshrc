@@ -1,6 +1,8 @@
 ZSH_DISABLE_COMPFIX="true"
 
-DOTFILES="$HOME/dotfiles"
+DOTFILES=(
+  .alias
+)
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
@@ -31,10 +33,6 @@ if [[ -n $SSH_CONNECTION ]]; then
 else
   export EDITOR='nvim'
 fi
-
-# Custom aliases
-alias nv="nvim"
-
 
 # Load default dotfiles
 for DOTFILE in $DOTFILES; do

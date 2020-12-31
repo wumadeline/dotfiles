@@ -4,6 +4,7 @@
 set -e
 
 DOTFILES="
+ .alias
  .gitconfig
  .zshrc
 "

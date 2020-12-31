@@ -1,0 +1,12 @@
+# Git aliases
+alias gch='git checkout'
+alias glog='git log'
+alias ggpullf='ggpull -f'
+alias ggpushf='ggpush -f'
+alias gre='git reset'
+alias greh='git reset --hard'
+alias grem='git reset ${git_main_branch}'
+alias grss='git restore --staged'
+
+# Neovim aliases
+alias nv='nvim'

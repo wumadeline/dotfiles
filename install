@@ -40,7 +40,7 @@ confirm () {
 
 link_dotfiles () {
     for dotfile in $DOTFILES; do
-        silence ln -sf "$HOME/dotfiles/$dotfile" "$HOME" || warn "Failed to link $dotfile" && \
+        silence ln -sf "$HOME/dotfiles/$dotfile" "$HOME/$dotfile" || warn "Failed to link $dotfile" && \
             info "Linked $dotfile"
     done
 }

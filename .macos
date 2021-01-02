@@ -224,18 +224,18 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 	# Enable auto-correct
 	defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool true
 
-	# Set delay before key repeat to 10
-	defaults write NSGlobalDomain InitialKeyRepeat -int 10
+	# Set delay before key repeat to 15
+	defaults write NSGlobalDomain InitialKeyRepeat -int 15
 
-	# Set key repeat to 4
-	defaults write NSGlobalDomain KeyRepeat -int 4
+	# Set key repeat to 1
+	defaults write NSGlobalDomain KeyRepeat -int 1
 
 	# Automatically capitalize words
 	defaults write NSGlobalDomain NSAutomaticCapitalizationEnabled -bool true
-			
+
 	# Use smart dashes
 	defaults write NSGlobalDomain NSAutomaticDashSubstituitonEnabled -bool true
-	 
+
 	# Use smart quotes
 	defaults write NSGlobalDomain NSAutomaticQuoteSubstitutionEnabled -bool true
 

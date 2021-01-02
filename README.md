@@ -139,3 +139,7 @@ detailing shells commands to customize macOS
 > [A Complete Guide to Neovim Configuration for Python Development on
 Linux](https://jdhao.github.io/2018/12/24/centos_nvim_install_use_guide_en/) by
 jdhao
+
+[Full GUI colors in iTerm, tmux, and
+vim](https://www.paulgessinger.com/posts/2020/full-gui-colors-in-iterm-tmux-and-vim/)
+by Paul Gessinger

@@ -3,6 +3,7 @@ cask_args appdir: "/Applications"
 
 # Taps
 tap "homebrew/cask"
+tap "homebrew/cask-fonts"
 tap "homebrew/bundle"
 
 # System set up
@@ -14,6 +15,9 @@ brew "grep"
 brew "mas"
 brew "rsync"
 brew "wget"
+
+# Fonts
+cask "font-meslo-lg-nerd-font"  # Used for vim-devicons plugin
 
 # Programming languages / Development
 brew "mysql"

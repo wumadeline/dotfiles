@@ -7,6 +7,7 @@ tap "homebrew/cask-fonts"
 tap "homebrew/bundle"
 
 # System set up
+brew "bat"
 brew "colordiff"
 brew "coreutils"  # Those that come with macOS are outdated
 brew "curl"

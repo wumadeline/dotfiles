@@ -44,7 +44,7 @@ let g:deoplete#enable_at_startup = 1           " Open deoplete at start up
 
 " FZF
 set rtp+=/usr/local/opt/fzf
-let $BAT_THEME = 'Solarized (Dark)'
+let $BAT_THEME = 'base2tone-earth.dark'        " Use theme for preview window
 
 " GitGutter
 set updatetime=250                             " Update sign column every quarter second (250 ms)

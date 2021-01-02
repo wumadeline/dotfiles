@@ -64,6 +64,21 @@ prompt_for_git_config () {
     fi
 }
 
+# Set up custom themes for bat
+# Used for sublime and fzf preview windows
+configure_bat () {
+  # Create config folder
+  mkdir -p ~/.config/bat
+  cd ~/.config/bat
+
+  # Download all Base2Tone themes
+  git clone https://github.com/atelierbram/Base2Tone-sublime-text themes
+
+  # Update the binary cache
+  bat cache --build
+}
+
+
 configure_git () {
     if [ ! -f .gitconfig ]; then
       echo "Configuring git..."
@@ -77,6 +92,7 @@ main () {
   echo "Setting up your Mac..."
   install_or_update_homebrew
   install_brewfile
+  configure_bat
   install_oh_my_zsh
   install_oh_my_zsh_plugins
   setup_neovim

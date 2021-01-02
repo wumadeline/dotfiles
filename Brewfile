@@ -31,7 +31,9 @@ brew "yarn"
 # Shell
 cask "iterm2"
 brew "fzf"
-brew "neovim"
+brew "luajit", args: ['HEAD']
+brew "luarocks"
+brew "neovim", args: ['HEAD']
 brew "ripgrep"
 brew "thefuck"
 brew "tmux"

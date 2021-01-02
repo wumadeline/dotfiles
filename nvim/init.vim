@@ -8,10 +8,18 @@ Plug 'blueyed/vim-diminactive'                 " Dim inactive windows
 Plug 'junegunn/goyo.vim'                       " Minimal, centered sessions
 Plug 'junegunn/limelight.vim'                  " Focused editing that dims surrounding text
 
+" NERDTree
+Plug 'scrooloose/nerdtree'                     " File tree explorer
+Plug 'Xuyuanp/nerdtree-git-plugin'             " Shows git status flags
+Plug 'ryanoasis/vim-devicons'                  " Adds filetype-specific icons
+
 " Functionalities
+Plug 'airblade/vim-gitgutter'                  " Show git diff markers
 Plug 'jiangmiao/auto-pairs'                    " Inserts/deletes brackets, parens, quotes in pairs
+Plug 'Shougo/deoplete.nvim'                    " Autocompletion
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }  " CLI fuzzy finder (not a plugin, a wrapper for vim)
 Plug 'junegunn/fzf.vim'                        " Plugin for fzf-based commands
+Plug 'scrooloose/nerdcommenter'                " Plugin for easy commenting
 Plug 'sheerun/vim-polyglot'                    " Language packs
 Plug 'tpope/vim-sensible'                      " Universal set of vim defaults
 
@@ -25,23 +33,56 @@ syntax on
 
 " Airline
 let g:airline_theme='Base2Tone_EarthDark'      " Set Airline theme to match Base2Tone editor theme
+let g:airline#extensions#hunks#non_zero_only = 1 " Display git line diffs from hunks
 
 " Base2Tone
 set background=dark                            " Use dark background
 colorscheme Base2Tone_EarthDark                " Dark brown-orange DuoTone syntax theme
 
+" Deoplete
+let g:deoplete#enable_at_startup = 1           " Open deoplete at start up
+
 " FZF
 set rtp+=/usr/local/opt/fzf
 let $BAT_THEME = 'Solarized (Dark)'
-map <C-f> <Esc><Esc>:Files!<CR>
+
+" GitGutter
+set updatetime=250                             " Update sign column every quarter second (250 ms)
+let g:gitgutter_enabled = 1                    " Always enable git gutter
+let g:gitgutter_highlight_lines = 0            " Turn off line highlighting
+let g:gitgutter_set_sign_backgrounds = 1       " Use GitGutter's background colors
+" Theme's default values match the background, which messes with the preview
+" window visibility. Change the background value to a different shade.
+highlight DiffAdded   guifg=#736d5e guibg=#3f3a37 ctermfg=242 ctermbg=237
+highlight DiffChanged guifg=#e6b84d guibg=#3f3a37 ctermfg=178 ctermbg=237
+highlight DiffRemoved guifg=#6f5849 guibg=#3f3a37 ctermfg=59 ctermbg=237
+
+
+"" Nerdtree
+let g:NERDTreeIgnore = ['^node_modules$']      " Don't show node_modules in file tree
+let g:NERDTreeShowHidden=1                     " Show hidden files
+" Exit Vim if NERDTree is the only window left.
+autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() |
+    \ quit | endif
 
 """ Other Configurations
-" Visual andd Formatting
-set encoding=utf-8                             " Use UTF-8
+" Enable full GUI colors
+let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+set termguicolors
+
+" Setting SignColumn to the same background as Normal
+" for GitGutter aesthetic purposes
+highlight SignColumn           NONE
+highlight link SignColumn Normal
+
+" Visual and Formatting
+set encoding=utf-8                             " Use UTF-8, needed for Python and GUI colors
 set number                                     " Show line numbers on the left side
 set showmatch                                  " Show matching brackets
 set formatoptions+=o                           " Continue comment marker in new lines
 set textwidth=0                                " Hard-wrap long lines as you type them
+
 " Flag whitespace
 highlight BadWhitespace ctermbg=red guibg=darkred
 au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
@@ -81,7 +122,35 @@ autocmd Filetype markdown setlocal tw=79
 autocmd Filetype python setlocal tw=79
 
 """ Custom Mappings
-let mapleader = ","
+nnoremap <SPACE> <Nop>
+let mapleader = " "
+
+" Deoplete
+" <TAB>: completion.
+inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+
+" GitGutter
+nnoremap <Leader>ha :GitGutterNextHunk<CR>
+nnoremap <Leader>hb :GitGutterPrevHunk<CR>
+nnoremap <Leader>ga :GitGutterStageHunk<CR>
+nnoremap <Leader>gu :GitGutterUndoHunk<CR>
+
+" Goyo
+nnoremap <leader>g :Goyo<CR>
+
+" FZF
+nnoremap <C-f> :Files<CR>
+
+" Limelight
+nnoremap <leader>li :Limelight<CR>
+nnoremap <leader>lo :Limelight!<CR>
+
+" NERDCommenter
+vmap ++ <Plug>NERDCommenterToggle
+nmap ++ <Plug>NERDCommenterToggle
+
+" NERDTree
+nmap <C-n> :NERDTreeToggle<CR>
 
 " Split Navigations
 nnoremap <C-J> <C-W><C-J>

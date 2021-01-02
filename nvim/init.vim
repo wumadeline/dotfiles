@@ -139,7 +139,10 @@ nnoremap <Leader>gu :GitGutterUndoHunk<CR>
 nnoremap <leader>g :Goyo<CR>
 
 " FZF
-nnoremap <C-f> :Files<CR>
+nnoremap <C-p> :Files<CR>
+nnoremap <C-g> :GFiles<CR>
+nnoremap <C-o> :Buffers<CR>
+nnoremap <C-f> :Rg<CR>
 
 " Limelight
 nnoremap <leader>li :Limelight<CR>

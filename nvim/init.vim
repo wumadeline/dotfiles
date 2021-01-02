@@ -143,7 +143,7 @@ nnoremap <C-f> :Files<CR>
 
 " Limelight
 nnoremap <leader>li :Limelight<CR>
-nnoremap <leader>lo :Limelight!<CR>
+nnoremap <leader>lu :Limelight!<CR>
 
 " NERDCommenter
 vmap ++ <Plug>NERDCommenterToggle
@@ -157,6 +157,12 @@ nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
+
+" Close buffer and jump to previous
+nnoremap <C-c> :bp\|bd #<CR>
+
+" Use ESC to jump out of Terminal mode
+tnoremap <Esc> <C-\><C-n>
 
 noremap :Q :q
 noremap :W :w

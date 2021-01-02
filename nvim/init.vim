@@ -164,9 +164,6 @@ nnoremap <C-H> <C-W><C-H>
 " Close buffer and jump to previous
 nnoremap <C-c> :bp\|bd #<CR>
 
-" Use ESC to jump out of Terminal mode
-tnoremap <Esc> <C-\><C-n>
-
 noremap :Q :q
 noremap :W :w
 noremap :X :x

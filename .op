@@ -1,0 +1,33 @@
+EMAIL="YOUR_EMAIL"
+SUBDOMAIN="YOUR_SUBDOMAIN"
+
+# Setup 1Password CLI, should only have to be run once
+op_setup () {
+    if [ ! -f ~/.config/op/config ]; then
+        op signin "$SUBDOMAIN".1password.com $EMAIL
+    fi
+}
+
+op_signin () {
+    eval $(op signin $SUBDOMAIN)
+}
+
+# Get the names of 1Password items
+op_items () {
+    echo "Getting items in your 1Password..."
+    {
+        op list items | jq '.[] | .overview.title'
+    } ||
+    {
+        op_signin
+        op list items | jq '.[] | .overview.title'
+    }
+}
+
+# Get one-time password
+otp () {
+    op get totp $1 || {
+        op_signin
+        op get totp $1
+    }
+}

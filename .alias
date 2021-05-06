@@ -1,3 +1,12 @@
+# Docker aliases
+# https://gist.github.com/jgrodziski/9ed4a17709baad10dbcd4530b60dfcbb
+alias dc='docker-compose'
+alias dcu='docker-compose up'
+alias dcud='docker-compose up -d'
+alias dcd='docker-compose down'
+alias dim='docker-compose images'
+alias dps='docker ps'
+
 # Git aliases
 alias gch='git checkout'
 alias glog='git log'

@@ -23,8 +23,6 @@ cask "font-meslo-lg-nerd-font"  # Used for vim-devicons plugin
 # Programming languages / Development
 brew "mysql"
 brew "node"
-brew "python"
-brew "python3"
 brew "pyenv"
 brew "yarn"
 

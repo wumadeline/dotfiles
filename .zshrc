@@ -20,10 +20,14 @@ export BAT_THEME='base2tone-earth.dark'
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
+# Also add zsh-poetry: https://github.com/darvid/zsh-poetry
 plugins=(
     autopep8
+    docker
+    docker-compose
     fzf
     git
+    poetry
     sublime
     thefuck
     zsh-autosuggestions

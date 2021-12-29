@@ -46,3 +46,10 @@ fi
 for DOTFILE in $DOTFILES; do
   [ -f "$DOTFILE" ] && source "$DOTFILE"
 done
+
+# Use pyenv version of Python
+if command -v pyenv 1>/dev/null 2>&1; then
+  eval "$(pyenv init -)"
+fi
+
+eval $(thefuck --alias)

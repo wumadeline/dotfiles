@@ -1,9 +1,13 @@
+" Python with venvs
+let g:python3_host_prog = '~/.pyenv/versions/neovim3/bin/python'
+
 """ Vim-Plug
 call plug#begin('~/.local/share/nvim/plugged')
 
 " Aesthetics
 Plug 'vim-airline/vim-airline'                 " Customize status/tabline
 Plug 'atelierbram/Base2Tone-vim'               " Duotone syntax highlighting
+Plug 'ap/vim-css-color'                        " Preview hex colors directly in source code
 Plug 'blueyed/vim-diminactive'                 " Dim inactive windows
 Plug 'junegunn/goyo.vim'                       " Minimal, centered sessions
 Plug 'junegunn/limelight.vim'                  " Focused editing that dims surrounding text
@@ -17,6 +21,7 @@ Plug 'ryanoasis/vim-devicons'                  " Adds filetype-specific icons
 Plug 'airblade/vim-gitgutter'                  " Show git diff markers
 Plug 'jiangmiao/auto-pairs'                    " Inserts/deletes brackets, parens, quotes in pairs
 Plug 'Shougo/deoplete.nvim'                    " Autocompletion
+Plug 'deoplete-plugins/deoplete-jedi'          " deoplete plugin for Python completion
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }  " CLI fuzzy finder (not a plugin, a wrapper for vim)
 Plug 'junegunn/fzf.vim'                        " Plugin for fzf-based commands
 Plug 'scrooloose/nerdcommenter'                " Plugin for easy commenting
@@ -118,7 +123,7 @@ autocmd Filetype zsh      setlocal ts=2 sts=2 sw=2
 
 " Max Width
 autocmd Filetype markdown setlocal tw=79
-autocmd Filetype python setlocal tw=79
+autocmd Filetype python setlocal tw=119
 
 """ Custom Mappings
 nnoremap <SPACE> <Nop>

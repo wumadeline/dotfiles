@@ -24,6 +24,7 @@ Plug 'Shougo/deoplete.nvim'                    " Autocompletion
 Plug 'deoplete-plugins/deoplete-jedi'          " deoplete plugin for Python completion
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }  " CLI fuzzy finder (not a plugin, a wrapper for vim)
 Plug 'junegunn/fzf.vim'                        " Plugin for fzf-based commands
+Plug 'puremourning/vimspector'                 " Multi-language debugger
 Plug 'scrooloose/nerdcommenter'                " Plugin for easy commenting
 Plug 'sheerun/vim-polyglot'                    " Language packs
 Plug 'tpope/vim-sensible'                      " Universal set of vim defaults
@@ -69,7 +70,10 @@ let g:NERDTreeShowHidden=1                     " Show hidden files
 autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() |
     \ quit | endif
 
-""" Other Configurations
+" Vimspector
+let g:vimspector_enable_mappings = 'HUMAN'     " Enable standard mappings
+
+"" Other Configurations
 " Enable full GUI colors
 let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
 let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"

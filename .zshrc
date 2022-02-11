@@ -6,10 +6,12 @@ ZSH_DISABLE_COMPFIX="true"
 
 DOTFILES=(
   .alias
+  dotfiles/.forethought/.config
 )
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
+export ZSH_CUSTOM="$ZSH/custom"
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
@@ -18,9 +20,15 @@ ZSH_THEME="agnoster"
 
 export BAT_THEME='base2tone-earth.dark'
 
+# Enable tab completion for Poetry
+# https://python-poetry.org/docs/#enable-tab-completion-for-bash-fish-or-zsh
+if [ ! -d $ZSH_CUSTOM/plugins/poetry ]; then
+  mkdir $ZSH_CUSTOM/plugins/poetry
+  poetry completions zsh > $ZSH_CUSTOM/plugins/poetry/_poetry
+fi
+
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-# Also add zsh-poetry: https://github.com/darvid/zsh-poetry
 plugins=(
     autopep8
     docker
@@ -28,6 +36,7 @@ plugins=(
     fzf
     git
     poetry
+    pyenv
     sublime
     thefuck
     zsh-autosuggestions
@@ -49,6 +58,7 @@ done
 
 # Use pyenv version of Python
 if command -v pyenv 1>/dev/null 2>&1; then
+  eval "$(pyenv init --path)"
   eval "$(pyenv init -)"
 fi
 

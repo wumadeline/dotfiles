@@ -10,17 +10,6 @@ sudo softwareupdate -i -a
 xcode-select --install
 ```
 
-#### Additional steps for ARM64 Macs
-Download Xcode from the MAS (Mac App Store). Otherwise, when running the `setup` script, `mas` and `neovim` will not be installed because it requires a full installation of Xcode via the MAS. 
-```
-mas: A full installation of Xcode.app 10.2 is required to compile
-this software. Installing just the Command Line Tools is not sufficient.
-
-Xcode can be installed from the App Store.
-Error: An unsatisfied requirement failed this build.
-Installing mas has failed!
-```
-
 ### Set Up
 Clone a copy of this directory onto your local machine, then run the setup script.
 ```
@@ -30,30 +19,6 @@ sh setup
 ```
 
 Note: In order to download and install MAS apps, you'll need to be signed into your iCloud account. This action hasn't been added programmatically via the set up script, so you'll need to do this manually.
-
-#### Installing neovim for ARM64 Macs
-I was getting this error when trying to `brew install neovim` on the M1.
-```
-Error: neovim: no bottle available!
-You can try to install from source with e.g.
-  brew install --build-from-source neovim
-Please note building from source is unsupported. You will encounter build
-failures with some formulae. If you experience any issues please create pull
-requests instead of asking for help on Homebrew's GitHub, Twitter or any other
-official channels.
-Installing neovim has failed!
-```
-
-I attempted the suggested command, `brew install --build-from-source`, but couldn't get that to run successfully. Ultimately, I installed a working version by building neovim:
-1. Install [pre-requisites](https://github.com/neovim/neovim/wiki/Building-Neovim#build-prerequisites)
-  - `brew install ninja libtool automake cmake pkg-config gettext`
-2. Clone the directory
-  - `git clone https://github.com/neovim/neovim.git`
-3. Follow instructions for [installing from the source](https://github.com/neovim/neovim/wiki/Installing-Neovim#install-from-source)
-  - `make CMAKE_BUILD_TYPE=Release`
-  - `sudo make install`
-  
-The result of this is `nvim` installed at `usr/local/bin`.
 
 ### Mac OS X Preferences
 Set default macOS system preferences:

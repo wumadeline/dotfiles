@@ -1,7 +1,10 @@
 #!/usr/bin/env bash
 
+echo "Updating MacOS System Preferences"
+
 # Close any open System Preferences panes, to prevent them from overriding
 # settings we’re about to change
+echo "Closing System Preferences"
 osascript -e 'tell application "System Preferences" to quit'
 
 # Ask for the administrator password upfront
@@ -10,6 +13,7 @@ sudo -v
 # Keep-alive: update existing `sudo` time stamp until `.macos` has finished
 while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
+echo "Updating General settings"
 ###############################################################################
 # General                                                                     #
 ###############################################################################
@@ -52,6 +56,7 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 	# Disable Sound Effects on Boot
 	sudo nvram SystemAudioVolume=" "
 
+echo "Updating Dock settings"
 ###############################################################################
 # Dock                                                                        #
 ###############################################################################
@@ -96,6 +101,7 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
 	killall Dock
 
+echo "Updating Mission Control settings"
 ###############################################################################
 # Mission Control                                                             #
 ###############################################################################
@@ -145,6 +151,7 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 	defaults write com.apple.dock wvous-br-corner   -int 5
 	defaults write com.apple.dock wvous-br-modifier -int 0
 
+echo "Updating Siri settings"
 ###############################################################################
 # Siri                                                                        #
 ###############################################################################
@@ -163,6 +170,7 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 	# Do not show Siri in menu bar
 	defaults write com.apple.systemuiserver "NSStatusItem Visible Siri" -bool false
 
+echo "Updating Locale settings"
 ###############################################################################
 # Locale                                                                      #
 ###############################################################################
@@ -173,6 +181,7 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 	# Use 24-hour time format
 	defaults write NSGlobalDomain AppleICUForce24HourTime -bool true
 
+echo "Updating Notification settings"
 ###############################################################################
 # Notifications                                                               #
 ###############################################################################
@@ -180,6 +189,7 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 	# Notification banner on screen time, default: 5 seconds
 	defaults write com.apple.notificationcenterui bannerTime 2
 
+echo "Updating Accessibility settings"
 ###############################################################################
 # Accessibility                                                                #
 ###############################################################################
@@ -187,6 +197,7 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 	# Shake mouse cursor to locate
 	defaults write CGDisableCursorLocationMagnification -bool true
 
+echo "Updating Security & Privacy settings"
 ###############################################################################
 # Security & Privacy                                                                #
 ###############################################################################
@@ -210,6 +221,7 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 	# Stealth mode
 	sudo defaults write /Library/Preferences/com.apple.alf stealthenabled -bool true
 
+echo "Updating Bluetooth settings"
 ###############################################################################
 # Bluetooth                                                                   #
 ###############################################################################
@@ -217,6 +229,7 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 	# Show Bluetooth in menu bar
 	defaults write com.apple.systemuiserver "NSStatusItem Visible com.apple.menuextra.bluetooth" -bool true
 
+echo "Updating Keyboard settings"
 ###############################################################################
 # Keyboard                                                                    #
 ###############################################################################
@@ -245,6 +258,7 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 	# Disable spell check
 	defaults write NSGlobalDomain NSAutomaticTextCompletionEnabled -bool false
 
+echo "Updating Trackpad settings"
 ###############################################################################
 # Trackpad                                                                    #
 ###############################################################################
@@ -275,6 +289,7 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 	# Disable “natural” scrolling
 	defaults write NSGlobalDomain com.apple.swipescrolldirection -bool false
 
+echo "Updating Mouse settings"
 ###############################################################################
 # Mouse                                                                       #
 ###############################################################################
@@ -291,6 +306,7 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 	# Set double click speed
 	defaults write NSGlobalDomain com.apple.mouse.doubleClickThreshold -float 0.5
 
+echo "Updating Date & Time settings"
 ###############################################################################
 # Date & Time                                                                 #
 ###############################################################################
@@ -299,7 +315,7 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 	sudo systemsetup -setusingnetworktime on > /dev/null
 
 	# Set time server
-	sudo systemsetup -setnetworktimeserver "time.apple.com" > /dev/null
+	# sudo systemsetup -setnetworktimeserver "time.apple.com" > /dev/null
 
 	# Set time zome automatically using current location
 	sudo defaults write /Library/Preferences/com.apple.timezone.auto.plist Active -bool true
@@ -315,6 +331,7 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
 	sudo killall SystemUIServer
 
+echo "Updating Misc settings"
 ###############################################################################
 # Misc.                                                                       #
 ###############################################################################

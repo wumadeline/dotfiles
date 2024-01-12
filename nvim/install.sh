@@ -24,9 +24,10 @@ for lua_file in $LUA_FILES; do
 done
 
 
-if [ ! -d $HOME/.config/nvim/lua/custom ]; then
-  mkdir "$HOME/.config/nvim/lua/custom"
+if [ -d $HOME/.config/nvim/lua/custom ]; then
+  rm -rf "$HOME/.config/nvim/lua/custom"
 fi
+mkdir "$HOME/.config/nvim/lua/custom"
 
 CUSTOM_FILES="
   airline

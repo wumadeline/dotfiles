@@ -3,7 +3,8 @@ local cmd = vim.cmd
 
 -- Base2Tone
 opt.background = dark  -- Use dark background
-cmd("colorscheme Base2Tone_EarthDark") -- Dark brown-orange DuoTone syntax theme
+cmd("syntax enable")
+cmd("colorscheme OceanicNext") -- Use oceanic next theme
 
 
 -- GitGutter
@@ -29,6 +30,10 @@ opt.smartcase = true -- Smart case search
 -- Formatting
 opt.colorcolumn = "80" -- Display ruler to indicate max line length
 opt.expandtab = true -- Use spaces instead of tabs
+opt.autoindent = true -- Automatically indent next line
+opt.smartindent = true -- Automatically insert extra level of indentation
+opt.tabstop = 4 -- 1 tab == 4 spaces
+opt.softtabstop = 4 -- 1 tab == 4 spaces
 
 
 -- Splits

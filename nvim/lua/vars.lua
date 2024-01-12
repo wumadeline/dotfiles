@@ -9,9 +9,9 @@ local highlight = vim.cmd.highlight
 
 -- Theme's default values match the background, which messes with the preview
 -- window visibility. Change the background value to a different shade.
-highlight({"DiffAdded", "guifg=#736d5e guibg=#3f3a37 ctermfg=242 ctermbg=237"})
-highlight({"DiffChanged", "guifg=#e6b84d guibg=#3f3a37 ctermfg=178 ctermbg=237"})
-highlight({"DiffRemoved", "guifg=#6f5849 guibg=#3f3a37 ctermfg=59 ctermbg=237"})
+--highlight({"DiffAdded", "guifg=#736d5e guibg=#3f3a37 ctermfg=242 ctermbg=237"})
+--highlight({"DiffChanged", "guifg=#e6b84d guibg=#3f3a37 ctermfg=178 ctermbg=237"})
+--highlight({"DiffRemoved", "guifg=#6f5849 guibg=#3f3a37 ctermfg=59 ctermbg=237"})
 
 highlight({"SignColumn", "NONE"})
 highlight({"link", "SignColumn", "Normal"})

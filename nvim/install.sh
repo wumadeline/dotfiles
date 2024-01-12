@@ -13,6 +13,7 @@ if [ ! -d $HOME/.config/nvim/lua ]; then
 fi
 
 LUA_FILES="
+ autocmds
  keys
  opts
  vars
@@ -31,6 +32,9 @@ mkdir "$HOME/.config/nvim/lua/custom"
 
 CUSTOM_FILES="
   airline
+  lspconfig
+  mason
+  noice
   oceanic-next
   plugins
   nvim-treesitter

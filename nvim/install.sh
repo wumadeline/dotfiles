@@ -43,7 +43,6 @@ CUSTOM_FILES="
   noice
   nvim-treesitter
   oceanic-next
-  plugins
   vim-diminactive
   vim-sensible
 "

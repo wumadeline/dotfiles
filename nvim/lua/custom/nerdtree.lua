@@ -14,7 +14,6 @@ return { "scrooloose/nerdtree",
     autocmd( "VimEnter", {
       pattern = "*",
       callback = function()
-        print("hello")
         vim.cmd(":NERDTree")
       end
     })

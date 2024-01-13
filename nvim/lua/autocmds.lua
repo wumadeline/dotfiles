@@ -25,3 +25,17 @@ autocmd("BufWritePre", {
     vim.lsp.buf.format({async = false})
   end
 })
+
+
+-- Indentation
+-- 2 spaces
+autocmd( "Filetype", {
+  pattern = { "bash", "css", "html", "lua", "markdown", "sh", "vim", "yaml", "zsh"},
+  command = "setlocal ts=2 sts=2 sw=2",
+})
+
+-- 4 spaces
+autocmd( "Filetype", {
+  pattern = { "py" },
+  command = "setlocal ts=4 sts=4 sw=4",
+})

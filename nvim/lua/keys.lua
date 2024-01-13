@@ -2,10 +2,6 @@ local map = vim.keymap.set
 
 map("n", "<SPACE>", "<Nop>")
 
--- Goyo
-map("n", "<Leader>g", ":Goyo<CR>")
-
-
 -- NERDCommenter
 map("v", "++", "<plug>NERDCommenterToggle<CR>")
 map("n", "++", "<plug>NERDCommenterToggle<CR>")

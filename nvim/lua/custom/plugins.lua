@@ -2,7 +2,6 @@ return {
   -- Aesthetics
   "ap/vim-css-color", -- Preview hex colors directly in source code
   "blueyed/vim-diminactive", -- Dim inactive windows
-  "junegunn/goyo.vim", -- Minimal, centered sessions
   "junegunn/limelight.vim", -- Focused editing that dims surrounding text
 
   -- NERDTree

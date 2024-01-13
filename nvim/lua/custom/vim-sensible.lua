@@ -1,1 +1,1 @@
-return { "tpop/vim-sensible" }
+return { "tpope/vim-sensible" }

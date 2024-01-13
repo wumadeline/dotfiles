@@ -18,7 +18,7 @@ export ZSH_CUSTOM="$ZSH/custom"
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 ZSH_THEME="agnoster"
 
-export BAT_THEME='base2tone-earth.dark'
+export BAT_THEME='Solarized (dark)'
 
 # Enable tab completion for Poetry
 # https://python-poetry.org/docs/#enable-tab-completion-for-bash-fish-or-zsh

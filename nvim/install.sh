@@ -36,6 +36,8 @@ CUSTOM_FILES="
   goyo
   lspconfig
   mason
+  nerdtree
+  nerdtree-git-plugin
   noice
   oceanic-next
   plugins

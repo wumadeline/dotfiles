@@ -7,9 +7,6 @@ map("v", "++", "<plug>NERDCommenterToggle<CR>")
 map("n", "++", "<plug>NERDCommenterToggle<CR>")
 
 
--- NERDTree
-map("n", "<C-n>", ":NERDTreeToggle<CR>", { remap = True })
-
 
 -- Split Navigations
 map("n", "<C-J>", "<C-W><C-J>")

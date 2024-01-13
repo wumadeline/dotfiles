@@ -32,16 +32,20 @@ mkdir "$HOME/.config/nvim/lua/custom"
 
 CUSTOM_FILES="
   airline
+  auto-pairs
   gitgutter
   goyo
   lspconfig
   mason
+  nerdcommenter
   nerdtree
   nerdtree-git-plugin
   noice
+  nvim-treesitter
   oceanic-next
   plugins
-  nvim-treesitter
+  vim-diminactive
+  vim-sensible
 "
 
 for custom_file in $CUSTOM_FILES; do

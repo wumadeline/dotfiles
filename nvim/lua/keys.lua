@@ -2,13 +2,6 @@ local map = vim.keymap.set
 
 map("n", "<SPACE>", "<Nop>")
 
--- GitGutter
-map("n", "<Leader>ha", ":GitGutterNextHunk<CR>")
-map("n", "<Leader>hb", ":GitGutterPrevHunk<CR>")
-map("n", "<Leader>ga", ":GitGutterStageHunk<CR>")
-map("n", "<Leader>gu", ":GitGutterUndoHunk<CR>")
-
-
 -- Goyo
 map("n", "<Leader>g", ":Goyo<CR>")
 

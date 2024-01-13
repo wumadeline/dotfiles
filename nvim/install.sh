@@ -32,6 +32,7 @@ mkdir "$HOME/.config/nvim/lua/custom"
 
 CUSTOM_FILES="
   airline
+  gitgutter
   lspconfig
   mason
   noice

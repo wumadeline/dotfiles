@@ -2,24 +2,10 @@ local map = vim.keymap.set
 
 map("n", "<SPACE>", "<Nop>")
 
--- GitGutter
-map("n", "<Leader>ha", ":GitGutterNextHunk<CR>")
-map("n", "<Leader>hb", ":GitGutterPrevHunk<CR>")
-map("n", "<Leader>ga", ":GitGutterStageHunk<CR>")
-map("n", "<Leader>gu", ":GitGutterUndoHunk<CR>")
-
-
--- Goyo
-map("n", "<Leader>g", ":Goyo<CR>")
-
-
 -- NERDCommenter
 map("v", "++", "<plug>NERDCommenterToggle<CR>")
 map("n", "++", "<plug>NERDCommenterToggle<CR>")
 
-
--- NERDTree
-map("n", "<C-n>", ":NERDTreeToggle<CR>", { remap = True })
 
 
 -- Split Navigations

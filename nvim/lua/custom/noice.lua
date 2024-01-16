@@ -4,6 +4,7 @@ return  {
   event = "VeryLazy",
   dependencies = {
     "MunifTanjim/nui.nvim", -- Used for proper rendering and multiple views
+    "rcarriga/nvim-notify",
   },
   config = function()
     local noice = require("noice")
@@ -23,6 +24,17 @@ return  {
         long_message_to_split = true, -- long messages will be sent to a split
         inc_rename = false, -- enables an input dialog for inc-rename.nvim
         lsp_doc_border = false, -- add a border to hover docs and signature help
+      },
+      cmdline = {
+        format = {
+          -- Use classic bottom cmdline for search
+          search_down = {
+            view = "cmdline",
+          },
+          search_up = {
+            view = "cmdline",
+          },
+        },
       },
     })
   end

@@ -11,6 +11,7 @@ return {
         "json",
         "lua",
         "go",
+        "proto",
         "python",
         "markdown",
         "markdown_inline",

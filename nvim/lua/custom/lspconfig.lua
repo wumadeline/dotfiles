@@ -55,5 +55,11 @@ return {
       capabilities = capabilities,
       on_attach = on_attach,
     })
+
+    -- config bufls
+    lspconfig["bufls"].setup({
+      capabilities = capabilities,
+      on_attach = on_attach,
+    })
   end,
 }

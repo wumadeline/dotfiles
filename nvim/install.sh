@@ -44,6 +44,7 @@ CUSTOM_FILES="
   noice
   nvim-treesitter
   oceanic-next
+  typescript-tools
   vim-diminactive
   vim-sensible
 "

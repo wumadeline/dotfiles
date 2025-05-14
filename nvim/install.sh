@@ -35,7 +35,6 @@ CUSTOM_FILES="
   auto-pairs
   fzf-vim
   gitgutter
-  goyo
   lspconfig
   mason
   nerdcommenter

@@ -9,7 +9,6 @@ Plug 'vim-airline/vim-airline'                 " Customize status/tabline
 Plug 'atelierbram/Base2Tone-vim'               " Duotone syntax highlighting
 Plug 'ap/vim-css-color'                        " Preview hex colors directly in source code
 Plug 'blueyed/vim-diminactive'                 " Dim inactive windows
-Plug 'junegunn/goyo.vim'                       " Minimal, centered sessions
 Plug 'junegunn/limelight.vim'                  " Focused editing that dims surrounding text
 
 " NERDTree
@@ -142,9 +141,6 @@ nnoremap <Leader>ha :GitGutterNextHunk<CR>
 nnoremap <Leader>hb :GitGutterPrevHunk<CR>
 nnoremap <Leader>ga :GitGutterStageHunk<CR>
 nnoremap <Leader>gu :GitGutterUndoHunk<CR>
-
-" Goyo
-nnoremap <leader>g :Goyo<CR>
 
 " FZF
 nnoremap <C-p> :Files<CR>

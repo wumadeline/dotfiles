@@ -33,6 +33,7 @@ mkdir "$HOME/.config/nvim/lua/custom"
 CUSTOM_FILES="
   airline
   auto-pairs
+  deoplete
   fzf-vim
   gitgutter
   lspconfig

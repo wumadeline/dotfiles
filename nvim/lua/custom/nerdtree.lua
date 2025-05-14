@@ -10,14 +10,7 @@ return { "scrooloose/nerdtree",
     -- Define autocmds
     local autocmd = vim.api.nvim_create_autocmd
 
-    -- Open NERDTree when starting vim
-    autocmd( "VimEnter", {
-      pattern = "*",
-      callback = function()
-        vim.cmd(":NERDTree")
-      end
-    })
-
+    -- Autoclose NERDTree if it's the last buffer
     autocmd( "BufEnter", {
       pattern = "*",
       callback = function()

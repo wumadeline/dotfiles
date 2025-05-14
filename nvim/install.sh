@@ -49,6 +49,7 @@ CUSTOM_FILES="
   typescript-tools
   vim-diminactive
   vim-sensible
+  which-key
 "
 
 for custom_file in $CUSTOM_FILES; do

@@ -22,6 +22,7 @@ return  {
           "bufls",
           --"gopls", Installed this manually because versioning issue
           "lua_ls",
+          "marksman",
           "pyright",
         },
         -- autoinstall configured servers (with lspconfig)

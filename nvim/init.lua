@@ -20,7 +20,6 @@ require("opts")
 require("vars")
 require("autocmds")
 
-
 -- Prevents neovim from removing all newlines when EditorConfig `insert_final_newline` is false
 -- https://github.com/neovim/neovim/issues/21648
 require("editorconfig").properties.insert_final_newline = function(bufnr, val, opts)

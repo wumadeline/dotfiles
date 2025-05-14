@@ -2,6 +2,8 @@ if [[ "$(uname -m)" == "arm64" ]]; then
   export PATH="/opt/homebrew/bin:${PATH}"
 fi
 
+export PATH="${HOME}/bin:${PATH}"
+
 ZSH_DISABLE_COMPFIX="true"
 
 DOTFILES=(

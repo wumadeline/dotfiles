@@ -18,6 +18,7 @@ opt.showmatch = true -- Show matching brackets
 opt.formatoptions = opt.formatoptions + "o" -- Continue comment marker in new lines
 opt.textwidth = 0 -- Hard-wrap long lines as you type them
 opt.termguicolors = true -- enable full GUI colors
+opt.signcolumn = "yes:2" -- Allow one column for GitGutter and another for Diagnostics
 
 
 -- Search

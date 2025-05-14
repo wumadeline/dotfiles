@@ -37,6 +37,7 @@ CUSTOM_FILES="
   fzf-vim
   gitgutter
   lspconfig
+  markdown-preview
   mason
   nerdcommenter
   nerdtree

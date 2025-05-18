@@ -15,8 +15,6 @@ install_or_update_homebrew () {
 }
 
 install_brewfile () {
-  # Install all our dependencies with bundle (See Brewfile)
-  brew tap homebrew/bundle
   echo "› brew bundle"
   brew bundle
 }

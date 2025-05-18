@@ -4,7 +4,6 @@ cask_args appdir: "/Applications"
 # Taps
 tap "homebrew/cask"
 tap "homebrew/cask-fonts"
-tap "homebrew/bundle"
 
 # System set up
 brew "bat"

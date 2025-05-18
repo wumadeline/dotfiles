@@ -28,7 +28,6 @@ brew "luajit", args: ['HEAD']
 brew "luarocks"
 brew "neovim", args: ['HEAD']
 brew "ripgrep"
-brew "thefuck"
 brew "tmux"
 brew "zsh"
 

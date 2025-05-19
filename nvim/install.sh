@@ -44,6 +44,7 @@ CUSTOM_FILES="
   nerdtree-git-plugin
   noice
   nvim-treesitter
+  obsidian
   oceanic-next
   trouble
   typescript-tools

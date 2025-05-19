@@ -6,6 +6,7 @@ return { "scrooloose/nerdtree",
   },
   config = function()
     vim.g.NERDTreeShowHidden = 1 -- Show hidden files
+    vim.g.NERDTreeReveal = 1 -- Automatically reveal the current file in NERDTree
 
     -- Define autocmds
     local autocmd = vim.api.nvim_create_autocmd
@@ -34,6 +35,14 @@ return { "scrooloose/nerdtree",
           -- If none of the listed buffers are in the active windows, quit and close the tree
           vim.cmd("quit")
         end
+      end
+    })
+
+    -- Refresh NERDTree after certain events
+    autocmd( {"BufWritePost", "BufNewFile", "FileAppendPost", "FileWritePost"}, {
+      pattern = "*",
+      callback = function()
+        vim.cmd("NERDTreeRefresh")
       end
     })
   end

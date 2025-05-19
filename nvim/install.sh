@@ -34,7 +34,7 @@ CUSTOM_FILES="
   airline
   auto-pairs
   deoplete
-  fzf-vim
+  fzf-lua
   gitgutter
   lspconfig
   markdown-preview

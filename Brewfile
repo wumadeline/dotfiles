@@ -23,7 +23,6 @@ brew "pyenv-virtualenv"
 brew "yarn"
 
 # Shell
-cask "iterm2"
 brew "fzf"
 brew "luajit", args: ['HEAD']
 brew "luarocks"
@@ -32,16 +31,12 @@ brew "ripgrep"
 brew "tmux"
 brew "zsh"
 
-# Install applications
+# Install UI applications
+cask "docker"
+cask "iterm2"
 cask "google-chrome"
 cask "messenger"
 cask "notion"
 cask "rectangle"
 cask "slack"
 cask "spotify"
-cask "sublime-text"
-cask "visual-studio-code"
-cask "zoom"
-
-# Install MAS applications
-mas "Spark", id: 1176895641

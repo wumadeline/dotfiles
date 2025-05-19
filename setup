@@ -1,4 +1,4 @@
-#!/bin/zsh
+#!/bin/zsh -x
 
 install_or_update_homebrew () {
   # Check for Homebrew and install if we don't have it
@@ -38,20 +38,29 @@ install_oh_my_zsh_plugins () {
   fi
 }
 
-setup_neovim () {
-  # Create init.vim
-  if [ ! -e ~/.config/nvim/init.vim ]; then
-      echo "Creating init.vim"
-      mkdir -p ~/.config/nvim
-      touch ~/.config/nvim/init.vim
+setup_pyenv () {
+  if command -v pyenv 1>/dev/null 2>&1; then
+    eval "$(pyenv init --path)"
+    eval "$(pyenv init -)"
   fi
+}
 
-
-  # Install vim-plug
-  if [ ! -f ~/.local/share/nvim/site/autoload/plug.vim ]; then
-    echo "Installing vim-plug..."
-    sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
-       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+setup_neovim () {
+  # set up python3 from neovim
+  # in nvim/init.lua, `g.python3_host_prog` will be set to "~/.pyenv/versions/neovim/bin/python3"
+  pyenv virtualenvs | grep -q "neovim"
+  if [[ ! `pyenv virtualenvs | grep "neovim"` ]]; then
+    pyenv virtualenv neovim
+    echo "created virtualenv neovim for python3 installation"
+    if pyenv activate neovim; then
+      pip install pynvim neovim
+      pyenv deactivate
+      echo "installed python3 dependencies for neovim"
+    else
+      echo "failed to activate neovim virtualenv"
+    fi
+  else
+    echo "skipping neovim python3 setup, virtualenv already exists"
   fi
 }
 
@@ -100,6 +109,7 @@ main () {
   configure_bat
   install_oh_my_zsh
   install_oh_my_zsh_plugins
+  setup_pyenv
   setup_neovim
   configure_git
   echo "Completed Mac set up!"

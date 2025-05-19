@@ -1,3 +1,5 @@
+vim.g.python3_host_prog = "~/.pyenv/versions/neovim/bin/python3" -- point to neovim virtualenv which has pynvim and neovim installed
+
 vim.g.mapleader = " " -- Use space as the leader key
 
 -- [[ Plugins ]]

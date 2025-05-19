@@ -7,8 +7,7 @@ export PATH="${HOME}/bin:${PATH}"
 ZSH_DISABLE_COMPFIX="true"
 
 DOTFILES=(
-  .alias
-  dotfiles/.forethought/.config
+  $HOME/.alias
 )
 
 # Path to your oh-my-zsh installation.
@@ -54,11 +53,9 @@ fi
 
 # Load default dotfiles
 for DOTFILE in $DOTFILES; do
-  [ -f "$DOTFILE" ] && source "$DOTFILE"
+  if [ -f "$DOTFILE" ]; then
+    source "$DOTFILE"
+  else
+    echo "Warning: DOTFILE '$DOTFILE' not found or not a file."
+  fi
 done
-
-# Use pyenv version of Python
-if command -v pyenv 1>/dev/null 2>&1; then
-  eval "$(pyenv init --path)"
-  eval "$(pyenv init -)"
-fi

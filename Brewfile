@@ -19,6 +19,7 @@ cask "font-meslo-lg-nerd-font"  # Used for vim-devicons plugin
 brew "mysql"
 brew "node"
 brew "pyenv"
+brew "pyenv-virtualenv"
 brew "yarn"
 
 # Shell
@@ -26,7 +27,7 @@ cask "iterm2"
 brew "fzf"
 brew "luajit", args: ['HEAD']
 brew "luarocks"
-brew "neovim", args: ['HEAD']
+brew "neovim"
 brew "ripgrep"
 brew "tmux"
 brew "zsh"

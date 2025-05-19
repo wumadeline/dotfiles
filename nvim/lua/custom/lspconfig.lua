@@ -72,7 +72,7 @@ return {
 
     -- config bufls
     -- installation managed by mason
-    lspconfig["bufls"].setup({
+    lspconfig["buf_ls"].setup({
       capabilities = capabilities,
       on_attach = on_attach,
     })

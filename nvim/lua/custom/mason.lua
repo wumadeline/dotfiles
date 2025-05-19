@@ -19,7 +19,7 @@ return  {
 
       mason_lspconfig.setup({
         ensure_installed = {
-          "bufls",
+          "buf_ls",
           --"gopls", Installed this manually because versioning issue
           "lua_ls",
           "marksman",

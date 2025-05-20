@@ -46,6 +46,7 @@ CUSTOM_FILES="
   nvim-treesitter
   obsidian
   oceanic-next
+  toggleterm
   trouble
   typescript-tools
   vim-diminactive

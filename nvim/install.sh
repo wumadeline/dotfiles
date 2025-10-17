@@ -33,6 +33,7 @@ mkdir "$HOME/.config/nvim/lua/custom"
 CUSTOM_FILES="
   airline
   auto-pairs
+  catppuccin
   deoplete
   fzf-lua
   gitgutter
@@ -46,6 +47,7 @@ CUSTOM_FILES="
   nvim-treesitter
   obsidian
   oceanic-next
+  themery
   toggleterm
   trouble
   typescript-tools

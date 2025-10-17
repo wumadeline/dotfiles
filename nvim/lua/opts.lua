@@ -4,7 +4,7 @@ local cmd = vim.cmd
 -- Base2Tone
 opt.background = dark  -- Use dark background
 cmd("syntax enable")
-cmd("colorscheme OceanicNext") -- Use oceanic next theme
+cmd("colorscheme catppuccin") -- Use oceanic next theme
 
 
 -- GitGutter

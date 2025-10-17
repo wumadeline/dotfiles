@@ -8,17 +8,18 @@ return {
     "L3MON4D3/LuaSnip", -- Snippets plugin
   },
   keys = {
-    {"<leader>D", function() vim.lsp.buf.defintion() end, mode = "n", desc = "Go to declaration"},
-    {"<leader>d", function() vim.lsp.buf.definition() end, mode = "n", desc = "Go to definition"},
-    {"<leader>i", function() vim.lsp.buf.implementation() end, mode = "n", desc = "List implementations"},
-    {"<leader>r", function() vim.lsp.buf.references() end, mode = "n", desc = "List references"},
-    {"<leader>K", function() vim.lsp.buf.hover() end, mode = "n", desc = "Show documentation for what is under the cursor"},
-    {"<leader>k", function() vim.lsp.buf.signature_help() end, mode = "n", desc = "Display signature info"},
+    {"gD", function() vim.lsp.buf.declaration() end, mode = "n", desc = "Go to declaration"},
+    {"gd", function() vim.lsp.buf.definition() end, mode = "n", desc = "Go to definition"},
+    {"gi", function() vim.lsp.buf.implementation() end, mode = "n", desc = "List implementations"},
+    {"gr", function() vim.lsp.buf.references() end, mode = "n", desc = "List references"},
+    {"<shift>K", function() vim.lsp.buf.hover() end, mode = "n", desc = "Show documentation for what is under the cursor"},
+    {"<shift>k", function() vim.lsp.buf.signature_help() end, mode = "n", desc = "Display signature info"},
     {"<Leader>rn", function() vim.lsp.buf.rename() end, mode = "n", desc = "Rename"},
     {"<leader>ca", function() vim.lsp.buf.code_action({apply = true}) end, mode = "n", desc = "Apply code action (e.g. golang: Fill struct)"},
     {"<leader>f", function() vim.lsp.buf.format({async = true}) end, mode = "n", desc = "Format file"},
     {"<Leader>dk", function() vim.diagnostic.goto_prev() end, mode = "n", desc = "Go to previous diagnostic"},
     {"<Leader>dj", function() vim.diagnostic.goto_next() end, mode = "n", desc = "Go to next diagnostic"},
+    {"<C-q>", function() vim.cmd("cclose") end, mode = "n", desc = "Shortcut to close the quicfix window"}
   },
   config = function()
     -- import lspconfig plugin
@@ -42,7 +43,7 @@ return {
     -- configure gopls
     -- installed with
     -- go install golang.org/x/tools/gopls@latest
-    lspconfig["gopls"].setup({
+    vim.lsp.config('gopls', {
       capabilities = capabilities,
       on_attach = on_attach,
     })
@@ -51,35 +52,37 @@ return {
     -- installed with
     -- go install github.com/nametake/golangci-lint-langserver@latest
     -- go install github.com/golangci/golangci-lint/cmd/golangci-lint@latest
-    lspconfig["golangci_lint_ls"].setup({
+    vim.lsp.config('golang_lint_ls', {
       capabilities = capabilities,
       on_attach = on_attach,
     })
 
     -- configure pyright
     -- installation managed by mason
-    lspconfig["pyright"].setup({
+    vim.lsp.config('pyright', {
       capabilities = capabilities,
       on_attach = on_attach,
     })
 
     -- configure lua_ls
     -- installation managed by mason
-    lspconfig["lua_ls"].setup({
+    vim.lsp.config('lua_ls', {
       capabilities = capabilities,
       on_attach = on_attach,
     })
 
     -- config bufls
     -- installation managed by mason
-    lspconfig["buf_ls"].setup({
+    vim.lsp.config('buf_ls', {
       capabilities = capabilities,
       on_attach = on_attach,
     })
 
+
+
     -- configure marksman
     -- installation managed by mason
-    lspconfig["marksman"].setup({
+    vim.lsp.config('marksman', {
       capabilities = capabilities,
       on_attach = on_attach,
     })

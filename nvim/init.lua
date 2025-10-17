@@ -27,3 +27,6 @@ require("autocmds")
 require("editorconfig").properties.insert_final_newline = function(bufnr, val, opts)
   vim.b[bufnr].insert_final_newline = nil
 end
+
+-- Show checkhealth in a floating window
+vim.g.health = { style = 'float' }

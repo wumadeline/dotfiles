@@ -30,7 +30,7 @@ autocmd("BufWritePre", {
 -- Indentation
 -- 2 spaces
 autocmd( "Filetype", {
-  pattern = { "bash", "css", "html", "lua", "markdown", "sh", "vim", "yaml", "zsh"},
+  pattern = { "bash", "css", "html", "lua", "markdown", "sh", "vim", "yaml", "zsh", "json", "tsx"},
   command = "setlocal ts=2 sts=2 sw=2",
 })
 

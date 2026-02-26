@@ -34,12 +34,14 @@ CUSTOM_FILES="
   airline
   auto-pairs
   catppuccin
+  claude-code
   deoplete
   fzf-lua
   gitgutter
   lspconfig
   markdown-preview
   mason
+  neotest
   nerdcommenter
   nerdtree
   nerdtree-git-plugin
